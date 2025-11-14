@@ -1,0 +1,108 @@
+[07-Dec-2024 01:26:23 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'due_date' in 'WHERE' in /home4/dunsterc/public_html/LoanManagement.php:28
+Stack trace:
+#0 /home4/dunsterc/public_html/LoanManagement.php(28): mysqli->prepare('SELECT * FROM t...')
+#1 /home4/dunsterc/public_html/index.php(259): LoanManagement->getOverdueBorrowers('2024-12-07')
+#2 {main}
+  thrown in /home4/dunsterc/public_html/LoanManagement.php on line 28
+[07-Dec-2024 01:26:25 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'due_date' in 'WHERE' in /home4/dunsterc/public_html/LoanManagement.php:28
+Stack trace:
+#0 /home4/dunsterc/public_html/LoanManagement.php(28): mysqli->prepare('SELECT * FROM t...')
+#1 /home4/dunsterc/public_html/index.php(259): LoanManagement->getOverdueBorrowers('2024-12-07')
+#2 {main}
+  thrown in /home4/dunsterc/public_html/LoanManagement.php on line 28
+[07-Dec-2024 01:26:27 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'due_date' in 'WHERE' in /home4/dunsterc/public_html/LoanManagement.php:28
+Stack trace:
+#0 /home4/dunsterc/public_html/LoanManagement.php(28): mysqli->prepare('SELECT * FROM t...')
+#1 /home4/dunsterc/public_html/index.php(259): LoanManagement->getOverdueBorrowers('2024-12-07')
+#2 {main}
+  thrown in /home4/dunsterc/public_html/LoanManagement.php on line 28
+[07-Dec-2024 01:26:29 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'due_date' in 'WHERE' in /home4/dunsterc/public_html/LoanManagement.php:28
+Stack trace:
+#0 /home4/dunsterc/public_html/LoanManagement.php(28): mysqli->prepare('SELECT * FROM t...')
+#1 /home4/dunsterc/public_html/index.php(259): LoanManagement->getOverdueBorrowers('2024-12-07')
+#2 {main}
+  thrown in /home4/dunsterc/public_html/LoanManagement.php on line 28
+[07-Dec-2024 01:26:31 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'due_date' in 'WHERE' in /home4/dunsterc/public_html/LoanManagement.php:28
+Stack trace:
+#0 /home4/dunsterc/public_html/LoanManagement.php(28): mysqli->prepare('SELECT * FROM t...')
+#1 /home4/dunsterc/public_html/index.php(259): LoanManagement->getOverdueBorrowers('2024-12-07')
+#2 {main}
+  thrown in /home4/dunsterc/public_html/LoanManagement.php on line 28
+[07-Dec-2024 01:26:33 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'due_date' in 'WHERE' in /home4/dunsterc/public_html/LoanManagement.php:28
+Stack trace:
+#0 /home4/dunsterc/public_html/LoanManagement.php(28): mysqli->prepare('SELECT * FROM t...')
+#1 /home4/dunsterc/public_html/index.php(259): LoanManagement->getOverdueBorrowers('2024-12-07')
+#2 {main}
+  thrown in /home4/dunsterc/public_html/LoanManagement.php on line 28
+[07-Dec-2024 01:43:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ManageLoan::getNotification1DayOverdue() in /home4/dunsterc/public_html/index.php:243
+Stack trace:
+#0 {main}
+  thrown in /home4/dunsterc/public_html/index.php on line 243
+[07-Dec-2024 01:43:30 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ManageLoan::getNotification1DayOverdue() in /home4/dunsterc/public_html/index.php:243
+Stack trace:
+#0 {main}
+  thrown in /home4/dunsterc/public_html/index.php on line 243
+[07-Dec-2024 01:43:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ManageLoan::getNotification1DayOverdue() in /home4/dunsterc/public_html/index.php:243
+Stack trace:
+#0 {main}
+  thrown in /home4/dunsterc/public_html/index.php on line 243
+[07-Dec-2024 01:43:34 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ManageLoan::getNotification1DayOverdue() in /home4/dunsterc/public_html/index.php:243
+Stack trace:
+#0 {main}
+  thrown in /home4/dunsterc/public_html/index.php on line 243
+[07-Dec-2024 01:44:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ManageLoan::getNotification1DayOverdue() in /home4/dunsterc/public_html/index.php:243
+Stack trace:
+#0 {main}
+  thrown in /home4/dunsterc/public_html/index.php on line 243
+[07-Dec-2024 01:44:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ManageLoan::getNotification1DayOverdue() in /home4/dunsterc/public_html/index.php:243
+Stack trace:
+#0 {main}
+  thrown in /home4/dunsterc/public_html/index.php on line 243
+[07-Dec-2024 01:44:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ManageLoan::getNotification1DayOverdue() in /home4/dunsterc/public_html/index.php:243
+Stack trace:
+#0 {main}
+  thrown in /home4/dunsterc/public_html/index.php on line 243
+[07-Dec-2024 01:44:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ManageLoan::getNotification1DayOverdue() in /home4/dunsterc/public_html/index.php:243
+Stack trace:
+#0 {main}
+  thrown in /home4/dunsterc/public_html/index.php on line 243
+[07-Dec-2024 01:50:10 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ManageLoan::getNotification1DayOverdue() in /home4/dunsterc/public_html/index.php:243
+Stack trace:
+#0 {main}
+  thrown in /home4/dunsterc/public_html/index.php on line 243
+[07-Dec-2024 01:50:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ManageLoan::getNotification1DayOverdue() in /home4/dunsterc/public_html/index.php:243
+Stack trace:
+#0 {main}
+  thrown in /home4/dunsterc/public_html/index.php on line 243
+[07-Dec-2024 01:50:30 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ManageLoan::getNotification1DayOverdue() in /home4/dunsterc/public_html/index.php:243
+Stack trace:
+#0 {main}
+  thrown in /home4/dunsterc/public_html/index.php on line 243
+[07-Dec-2024 01:51:10 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ManageLoan::getNotification1DayOverdue() in /home4/dunsterc/public_html/index.php:243
+Stack trace:
+#0 {main}
+  thrown in /home4/dunsterc/public_html/index.php on line 243
+[07-Dec-2024 01:51:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ManageLoan::getNotification1DayOverdue() in /home4/dunsterc/public_html/index.php:243
+Stack trace:
+#0 {main}
+  thrown in /home4/dunsterc/public_html/index.php on line 243
+[07-Dec-2024 01:51:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ManageLoan::getNotification1DayOverdue() in /home4/dunsterc/public_html/index.php:243
+Stack trace:
+#0 {main}
+  thrown in /home4/dunsterc/public_html/index.php on line 243
+[07-Dec-2024 01:51:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ManageLoan::getNotification1DayOverdue() in /home4/dunsterc/public_html/index.php:243
+Stack trace:
+#0 {main}
+  thrown in /home4/dunsterc/public_html/index.php on line 243
+[07-Dec-2024 01:51:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ManageLoan::getNotification1DayOverdue() in /home4/dunsterc/public_html/index.php:243
+Stack trace:
+#0 {main}
+  thrown in /home4/dunsterc/public_html/index.php on line 243
+[07-Dec-2024 01:51:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ManageLoan::getNotification1DayOverdue() in /home4/dunsterc/public_html/index.php:243
+Stack trace:
+#0 {main}
+  thrown in /home4/dunsterc/public_html/index.php on line 243
+[07-Dec-2024 01:52:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ManageLoan::getNotification1DayOverdue() in /home4/dunsterc/public_html/index.php:243
+Stack trace:
+#0 {main}
+  thrown in /home4/dunsterc/public_html/index.php on line 243
