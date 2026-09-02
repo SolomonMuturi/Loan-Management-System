@@ -86,15 +86,15 @@ $launch_date = "$year-$mon-$day"; -->
                   </select>
               </div>
           </div> 
-         <!-- <hr>
+          <hr>
           <div class="form-group row">
               <label for="user_picture" class="text-right font-weight-bold col-0.5 col-form-label">Borrower Photo</label>
               <input type="file" id="photo_file" name="image"> 
               <label for="user_picture" class="text-right font-weight-bold col-0.5 col-form-label">ID Front</label>
               <input type="file" id="photo_file" name="image">   <label for="user_picture" class="text-right font-weight-bold col-0.5 col-form-label">ID Back</label>
-              <input type="file" id="photo_file" name="image"></div> 
+              <input type="file" id="photo_file" name="image"></div>
               
-          </div> -->
+          </div>
              <hr>
           <div class="box-footer">
               <button type="submit" name="submit" class="btn btn-info pull-right" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Please Wait">Submit</button>
