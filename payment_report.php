@@ -84,7 +84,7 @@ $pdf->Ln(2);
 				$pdf->Cell(60,10,'Name ', 1);
 				$pdf->Cell(80,10,$rec['name'], 1);
 				$pdf->Ln();
-				
+
 				$pdf-> Cell(5);
 				$pdf->Cell(60,10,'Pay Date', 1);
 				$pdf->Cell(80,10,$rec['pay_date'], 1);
@@ -93,12 +93,6 @@ $pdf->Ln(2);
 				$pdf-> Cell(5);
 				$pdf->Cell(60,10,'Payment amount', 1);
 				$pdf->Cell(80,10,$rec['pay_amount']." Ksh", 1);
-				$pdf->Ln();
-
-
-				$pdf-> Cell(5);
-				$pdf->Cell(60,10,'Amount Remaining', 1);
-				$pdf->Cell(80,10,$rec['amount_remain']." Ksh", 1);
 				$pdf->Ln();
 
 				$pdf-> Cell(5);
