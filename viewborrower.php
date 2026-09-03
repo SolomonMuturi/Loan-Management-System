@@ -12,29 +12,27 @@
 		<table id="example" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
 	        <thead>
 	            <tr>
-	                <th>#</th>
 	                <th>Name</th>
 	                <th>Id</th>
-	                <th>Gender</th>
-	                <th>Mobile</th>
-	                <th>Email</th>
+	                <th>gender</th>
+	                <th>mobile</th>
+	                <th>email</th>
 	                <th>Date Applied</th>
-	                <th>Address</th>
-	                <th>Working Status</th>
+	                <th>address</th>
+	                <th>working status</th>
 	                <th>Image</th>
 	            </tr>
 	        </thead>
 	        <tfoot>
 	            <tr>
-	                <th>#</th>
 	                <th>Name</th>
 	                <th>Id</th>
-	                <th>Gender</th>
-	                <th>Mobile</th>
-	                <th>Email</th>
+	                <th>gender</th>
+	                <th>mobile</th>
+	                <th>email</th>
 	                <th>Date Applied</th>
-	                <th>Address</th>
-	                <th>Working Status</th>
+	                <th>address</th>
+	                <th>working status</th>
 	                <th>Image</th>	               
 	            </tr>
 	        </tfoot>
@@ -42,11 +40,12 @@
 	        	<?php 
 	        		$all = $emp->viewBorrower();
 	        		if ($all) {
-	        			$i = 1; // Initialize counter
+	        			$i = 1;
 	        			while ($row = $all->fetch_assoc()) {
+	        				$i++;
+
 	        	 ?>
 	            <tr>
-	                <td><?php echo $i; ?></td> <!-- Display numbering -->
 	                <td><?php echo $row['name']; ?></td>
 	                <td><?php echo $row['nid']; ?></td>
 	                <td><?php echo $row['gender']; ?></td>
@@ -56,9 +55,9 @@
 	                <td><?php echo $row['address']; ?></td>
 	                <td><?php echo $row['working_status']; ?></td>
 	                <td><img style="width:80px;height:70px;" src="<?php echo $row['image']; ?>" alt="" ></td>
+
 	            </tr>
 				<?php 
-	        			$i++; // Increment counter
 	        			}
 	        		}
 				 ?>
