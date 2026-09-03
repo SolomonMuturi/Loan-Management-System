@@ -1,29 +1,6 @@
 <?php
   include_once "inc/header.php";
   include_once "inc/sidebar.php";
-  // Check if 'nid' is passed via URL and fetch the borrower and loan details
-if (isset($_GET['nid'])) {
-  $nid = $_GET['nid'];
-
-  // Fetch borrower details
-  $br = $emp->findBorrower($nid);
-  if ($br) {
-      $row = $br->fetch_assoc();
-      $name = $row['name'];
-      $b_id = $row['id'];
-
-      // Fetch the approved loan details
-      $aploan = $ml->getApprovedLoanNotPaid($b_id);
-      if ($aploan) {
-          $loan = $aploan->fetch_assoc();
-          $loan_id_r = $loan['id'];
-      } else {
-          echo "<span class='text-center' style='color:red'>Loan not approved or already Paid!</span>";
-      }
-  } else {
-      echo "<span class='text-center' style='color:red'>Borrower ID not matched or not applicable for loan</span>";
-  }
-}
 ?>
 
        <script>
@@ -53,25 +30,13 @@ if (isset($_GET['nid'])) {
       </script>
 
 
- <?php 
- // Check if the form was submitted for reducing loan
-     if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['reduceLoan'])) {
-        // Call the reduceLoan method for reducing loan
-        $inserted = $ml->reduceLoan($_POST); // Assuming reduceLoan is a method for reducing the loan
-    }
-    // Check if the form was submitted for a regular payment
-    else if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['payment_submit'])) {
-        // Call the payLoan method for regular payment submission
-        $inserted = $ml->payLoan($_POST);
-    }
-    // Check if the form was submitted for a loan renewal
-    else if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submitRenew'])) {
-        // Call the payLoan method for loan renewal
-        $inserted = $ml->renewLoan($_POST); // Assuming renewLoan is a method for renewing the loan
-    }
-    
-?>
-
+  <?php 
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['payment_submit'])) {
+            
+            $inserted = $ml->payLoan($_POST);
+            
+        }
+   ?>
         <h3 class="page-heading mb-4">Loan Payment</h3>
         <h5 class="card-title p-3 bg-info text-white rounded">Payment</h5>
         <div class="container">
@@ -122,7 +87,7 @@ if (isset($_GET['nid'])) {
                 <div class="form-group row">
               <label for="inputBorrowerFirstName" class="text-right col-2 font-weight-bold col-form-label">Search brrower: </label>                      
               <div class="col-sm-6">
-                  <input type="text" name="key" class="form-control" id="inputBorrowerFirstName" placeholder="Enter ID or Phone number of borrower" required>
+                  <input type="text" name="key" class="form-control" id="inputBorrowerFirstName" placeholder="Enter ID number of borrower" required>
               </div>
               <div class="col-sm-3">
                 <input type="submit" class="btn btn-info" name="search" value="Search">
@@ -139,7 +104,6 @@ if (isset($_GET['nid'])) {
                   <input type="text" name="borrower_name" class="form-control" id="inputBorrowerFirstName" value="<?php if(isset($name)) echo $name; ?>" required readonly>
                   <input type="hidden" name="b_id" value="<?php if(isset($b_id)) echo $b_id; ?>">
                   <input type="hidden" name="loan_id" value="<?php if(isset($loan['id']))  echo $loan['id']; ?>">
-                 
               </div>
             </div>
 
@@ -174,11 +138,11 @@ if (isset($_GET['nid'])) {
               ?>
                   <!-- fine claculation -->
                <div class="form-group row">
-                <label  class="text-right col-2 font-weight-bold col-form-label">Fine Calculation(0% of EMI):</label>
+                <label  class="text-right col-2 font-weight-bold col-form-label">Fine Calculation(2% of EMI):</label>
                  <div class="col-sm-9">
                     <input type="number" name="fine_amount" class="form-control"  value="<?php 
                     //calculate fine
-                    echo  $loan['emi_loan'] * (0/100);
+                    echo  $loan['emi_loan'] * (2/100);
                      ?>" readonly>
                   </div>
                 </div> 
@@ -217,55 +181,26 @@ if (isset($_GET['nid'])) {
                   <input type="number"  name="total_amount" class="form-control"   value="<?php if(isset($loan['total_loan'])) echo $loan['total_loan']; ?>" readonly>
               </div>
             </div> 
-<div class="form-group row">
-    <label class="text-right col-2 font-weight-bold col-form-label">Paid Amount</label>
-    <div class="col-sm-9">
-        <input type="number" name="pay" id="paid_amount" class="form-control" 
-                required>
-    </div>
-</div>
-<div class="form-group row">
-    <label class="text-right col-2 font-weight-bold col-form-label">Amount Remaining</label>
-    <div class="col-sm-9">
-        <input type="number" name="remain_amount" id="remain_amount" class="form-control" 
-               value="<?php if (isset($loan['amount_remain'])) echo $loan['amount_remain']; ?>" readonly>
-    </div>
-</div>
+            <div class="form-group row">
+                <label  class="text-right col-2 font-weight-bold col-form-label">Paid Amount</label>
+                 <div class="col-sm-9">
+                  <input type="number" name="paid_amount" class="form-control"  value="<?php if(isset($loan['amount_paid'])) echo $loan['amount_paid']+$loan['emi_loan']; ?>" readonly>
+              </div>
+            </div> 
+          
+            <div class="form-group row">
+                <label  class="text-right col-2 font-weight-bold col-form-label">Amount Remaining</label>
+                 <div class="col-sm-9">
+                  <input type="number" name="remain_amount" class="form-control"  value="<?php if(isset($loan['amount_remain'])) echo $loan['amount_remain']; ?>" readonly>
+                 </div>
+            </div> 
 
-<script>
-    function updateRemainingAmount() {
-        // Retrieve the total amount and the entered paid amount
-        const totalAmount = <?php echo isset($loan['total_loan']) ? $loan['total_loan'] : 0; ?>;
-        const paidAmount = parseFloat(document.getElementById("paid_amount").value) || 0;
-
-        // Calculate remaining amount
-        const remainingAmount = totalAmount - paidAmount;
-
-        // Update the Amount Remaining field
-        document.getElementById("remain_amount").value = remainingAmount.toFixed(2);
-    }
-</script>
-<hr>
-<div class="form-group row">
-    <!-- Reduce Loan Button -->
-    <div class="col-md-2 mb-4">
-        <input type="submit" name="reduceLoan" class="btn btn-success btn-block" value="Reduce Loan">
-    </div>
-
-    <!-- Submit Payment Button -->
-    <div class="col-md-2 mb-4">
-        <input type="submit" name="payment_submit" class="btn btn-info btn-block" value="Submit Payment">
-    </div>
-
-    <!-- Renew Payment Button -->
-    <div class="col-md-2 mb-2">
-        <input type="submit" name="submitRenew" class="btn btn-warning btn-block" value="Renew Payment">
-    </div>
-</div>
-
-
-                 
-<!-- /.box-footer -->    
+             <hr>
+          <div class="form-group row">
+              <div class="col-md-6">
+              <input type="submit" name="payment_submit" class="btn btn-info pull-right" value="Submit Payment">
+              </div>
+          </div><!-- /.box-footer -->    
         </form>
        </div>       
 
