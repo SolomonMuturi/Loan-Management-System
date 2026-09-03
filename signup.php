@@ -9,9 +9,9 @@ $emp = new Employee();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="images/favicon.ico">
+    <link rel="icon" href="images/brac.jpg">
 
-    <title>Sign Up</title>
+    <title></title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -61,12 +61,7 @@ $emp = new Employee();
       <input class="btn btn-lg btn-primary btn-block" type="submit" name="submit" value="Register">
       <p class="mt-3 text-uppercase font-weight-bold text-center">Already registered ? <a href="signin.php">Sign in</a>.</p>
 
-      <div class="col-md-12 ">
-    <p class="text-muted text-center">
-        Developed by <a href="https://www.solitech.co.ke" target="_blank">Solitech</a> - 2024
-    </p>
-</div>
-
+      <p class="mt-5 mb-3 text-muted text-center">Developed by &copy; Solomon Muturi - 2024 </p>
     </form>
   </body>
 </html>
