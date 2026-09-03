@@ -5,7 +5,7 @@
 
 <div class="card">
   <div class="card-header">
-    All loan Applications
+    ALl loan Application
   </div>
   <div class="card-body">
     	<h5 class="card-title">Loan details</h5>
