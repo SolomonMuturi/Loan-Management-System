@@ -726,7 +726,7 @@
                     <div class="col-sm-6 col-md-4 col-lg-3"><i class="fa fa-bitcoin"></i> fa-bitcoin <span class="text-muted">(alias)</span> </div>
                     <div class="col-sm-6 col-md-4 col-lg-3"><i class="fa fa-btc"></i> fa-btc</div>
                     <div class="col-sm-6 col-md-4 col-lg-3"><i class="fa fa-cny"></i> fa-cny <span class="text-muted">(alias)</span> </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3"><i class="fa fa-dollar"></i> fa-dollar <span class="text-muted">(alias)</span> </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3"><i class="fa fa-money"></i> fa-money <span class="text-muted">(KSh)</span> </div>
                     <div class="col-sm-6 col-md-4 col-lg-3"><i class="fa fa-eur"></i> fa-eur</div>
                     <div class="col-sm-6 col-md-4 col-lg-3"><i class="fa fa-euro"></i> fa-euro <span class="text-muted">(alias)</span> </div>
                     <div class="col-sm-6 col-md-4 col-lg-3"><i class="fa fa-gbp"></i> fa-gbp</div>
@@ -853,7 +853,7 @@
                     <div class="col-sm-6 col-md-4 col-lg-3"><i class="fa fa-chevron-circle-up"></i> fa-chevron-circle-up</div>
                     <div class="col-sm-6 col-md-4 col-lg-3"><i class="fa fa-chevron-down"></i> fa-chevron-down</div>
                     <div class="col-sm-6 col-md-4 col-lg-3"><i class="fa fa-chevron-left"></i> fa-chevron-left</div>
-                    <div class="col-sm-6 col-md-4 col-lg-3"><i class="fa fa-chevron-right"></i> fa-chevron-right</div>
+                    <div class="col-sm-z6 col-md-4 col-lg-3"><i class="fa fa-chevron-right"></i> fa-chevron-right</div>
                     <div class="col-sm-6 col-md-4 col-lg-3"><i class="fa fa-chevron-up"></i> fa-chevron-up</div>
                     <div class="col-sm-6 col-md-4 col-lg-3"><i class="fa fa-hand-o-down"></i> fa-hand-o-down</div>
                     <div class="col-sm-6 col-md-4 col-lg-3"><i class="fa fa-hand-o-left"></i> fa-hand-o-left</div>

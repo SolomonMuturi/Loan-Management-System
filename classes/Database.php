@@ -1,9 +1,9 @@
 <?php
 class Database {
     private $host = 'localhost';  // Database host
-    private $username = 'dunsterc_root';   // Database username
-    private $password = 'Kenya@2024#';       // Database password
-    private $database = 'dunsterc_data'; // Database name
+    private $username = 'root';   // Database username for local XAMPP
+    private $password = '';       // Database password for local XAMPP
+    private $database = 'brac_loan'; // Database name from imported SQL dump
     private $connection;
 
     // Constructor to establish a connection

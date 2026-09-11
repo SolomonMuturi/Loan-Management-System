@@ -3,7 +3,7 @@
         <footer class="footer">
           <div class="container-fluid clearfix">
             <span class="float-right">
-                <a href="#">Dunster Credit</a> 2024
+                <a href="#">Dunster Credit</a> &copy; 2024
             </span>
           </div>
         </footer>

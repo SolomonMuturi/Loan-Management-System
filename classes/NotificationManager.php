@@ -22,11 +22,10 @@ class NotificationManager {
                     total_loan, 
                     IFNULL(amount_paid, 0) AS amount_paid, 
                     IFNULL(next_date, 'N/A') AS next_date, 
-                    IFNULL(payment_date, 'N/A') AS payment_date, 
                     (total_loan - IFNULL(amount_paid, 0)) AS amount_remain
                 FROM tbl_loan_application
                 WHERE next_date IS NOT NULL
-                AND (next_date <= CURDATE() OR payment_date = CURDATE())
+                AND next_date <= CURDATE()
                 ORDER BY next_date ASC
             ";
 

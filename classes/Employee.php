@@ -63,41 +63,33 @@ class Employee
 		}
 		
 	}
-// users login
-public function employeeLogin($data){
-    $email = $data['email'];
-    $email = mysqli_real_escape_string($this->db->link, $email);
-    $pass = $this->fm->validation(md5($data['pass']));
-    $pass = mysqli_real_escape_string($this->db->link, $pass);
-
-    if (empty($email) || empty($pass)) {
-        $msg = "<span class='text-danger'>Fields must not be empty !</span>";
-        return $msg;
-    } else {
-        $sql = "SELECT * FROM tbl_user WHERE email='$email' AND pass='$pass'";
-        $result = $this->db->select($sql);
-        if ($result != false) {
-            $value = $result->fetch_assoc();
-            Session::set("userlogin", true);
-            Session::set("user_id", $value['id']);
-            Session::set("name", $value['name']);
-            Session::set("designation", $value['designation']);
-            Session::set("role", $value['role']);
-
-            // Check email and redirect accordingly
-            if ($email === "branch@gmail.com") {
-                header("Location: newbranch.php");
-            } else {
-                header("Location: index.php");
-            }
-            exit; // Always exit after header redirect
-        } else {
-            $msg = "<span class='text-danger'>Email or password not matched !</span>";
-            return $msg;
-        }
-    }
-}
-
+	// //users login
+	public function employeeLogin($data){
+		$email = $data['email'];
+		$email = mysqli_real_escape_string($this->db->link, $email);
+		$pass = $this->fm->validation(md5($data['pass']));
+	    $pass = mysqli_real_escape_string($this->db->link, $pass);
+	    if (empty($email) or empty($pass))
+		{
+			$msg = "<span class='text-danger'>Fields must not be empty !</span>";
+			return $msg;
+		}else{
+			$sql = "SELECT * FROM tbl_user WHERE email='$email' AND pass='$pass'";
+			$result = $this->db->select($sql);
+			if ($result != false) {
+				$value = $result->fetch_assoc();
+				Session::set("userlogin",true);
+				Session::set("user_id",$value['id']);
+				Session::set("name",$value['name']);
+				Session::set("designation",$value['designation']);
+				Session::set("role",$value['role']);
+				header("Location: index.php");
+			}else{
+				$msg = "<span class='text-danger'>Email or password not matched !</span>";
+				return $msg;
+			}
+		}
+	}
 
 	public function addBorrower($data, $file)
 	{
@@ -133,7 +125,7 @@ public function employeeLogin($data){
 		$file_temp = $file['image']['tmp_name'];
 
 		
-		if (empty($borrower_name) or empty($borrower_nid) or empty($borrower_gender) or empty($borrower_mobile) or empty($borrower_email) or empty($borrower_dob) or empty($borrower_address) or empty($borrower_working_status) or !empty($file_name))
+		if (empty($borrower_name) or empty($borrower_nid) or empty($borrower_gender) or empty($borrower_mobile) or empty($borrower_email) or empty($borrower_dob) or empty($borrower_address) or empty($borrower_working_status) or empty($file_name))
 		{
 			$msg = "<span class='error'>Fields must not be empty !.</span>";
 			return $msg;
@@ -151,12 +143,12 @@ public function employeeLogin($data){
 				$unique_image = substr(md5(time()), 0, 10).'.'.$file_ext;
 				$uploaded_image = "admin/uploads/".$unique_image;
 				
-				if ($file_size >2048567) {
-					$msg = "<span class='error'>Borrower not found !.hould </span>";
+				if ($file_size >1048567) {
+					$msg = "<span class='error'>Borrower not found !.</span>";
 					return $msg;
-			//	} elseif (in_array($file_ext, $permited) === false) {
-			//		echo "<span class='error'>You can upload only:-"
-			//		.implode(', ', $permited)."</span>";
+				} elseif (in_array($file_ext, $permited) === false) {
+					echo "<span class='error'>You can upload only:-"
+					.implode(', ', $permited)."</span>";
 				}else{
 					move_uploaded_file($file_temp, $uploaded_image);
 					
@@ -183,14 +175,7 @@ public function employeeLogin($data){
 		$sql = "SELECT * FROM tbl_borrower  ORDER BY id DESC";
 		$result = $this->db->select($sql);
 		return $result;
-	}
-	
-		public function viewBorrowerlist()
-	{
-		//get all borrower data
-		$sql = "SELECT * FROM tbl_borrower  ORDER BY id DESC";
-		$result = $this->db->select($sql);
-		return $result;
+
 	}
 
 	public function findBorrower($nid)
@@ -208,8 +193,6 @@ public function employeeLogin($data){
 		$result = $this->db->select($sql);
 		return $result;
 	}
-	
-
 
 //end of Employee class
 }

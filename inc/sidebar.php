@@ -1,6 +1,6 @@
 <!-- partial -->
-    <div class="container-fluid mt-5">
-      <div class="row row-offcanvas row-offcanvas-left">
+    <div class="container-fluid">
+      <div class="row row-offcanvas row-offcanvas-right">
         <!-- partial:partials/_sidebar.html -->
         <nav class="bg-white sidebar sidebar-offcanvas" id="sidebar">
           <div class="user-info">
@@ -12,7 +12,7 @@
           <ul class="nav">
             <li class="nav-item active">
               <a class="nav-link" href="index.php">
-                <img src="images/icons/1.png" alt="">
+                <i class="fa fa-dashboard icon-dashboard" aria-hidden="true"></i>
                 <span class="menu-title">Dashboard</span>
               </a>
             </li>
@@ -21,7 +21,7 @@
           <!-- borrower option -->
             <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#borrower-pages" aria-expanded="false" aria-controls="borrower-pages">
-                <img src="images/icons/9.png" alt="">
+                <i class="fa fa-user icon-borrower" aria-hidden="true"></i>
                 <span class="menu-title">Borrower<i class="fa fa-sort-down"></i></span>
               </a>
               <div class="collapse" id="borrower-pages">
@@ -38,25 +38,25 @@
             <!-- end borrower option -->
             <li class="nav-item">
               <a class="nav-link" href="apply_for_loan.php">
-                <img src="images/icons/4.png" alt="">
+                <i class="fa fa-file-text icon-apply" aria-hidden="true"></i>
                 <span class="menu-title">Apply for loan</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="loan_application.php">
-                <img src="images/icons/5.png" alt="">
+                <i class="fa fa-list-alt icon-applications" aria-hidden="true"></i>
                 <span class="menu-title">Loan applications</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="payloan.php">
-                <img src="images/icons/6.png" alt="">
+                <i class="fa fa-money icon-payment" aria-hidden="true"></i>
                 <span class="menu-title">Loan Payment</span>
               </a>
             </li>
              <li class="nav-item">
               <a class="nav-link" href="loan_status.php">
-                <img src="images/icons/7.png" alt="">
+                <i class="fa fa-bar-chart icon-status" aria-hidden="true"></i>
                 <span class="menu-title">Loan Status</span>
               </a>
             </li>
@@ -64,7 +64,7 @@
             <!-- liability option -->
             <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#liability-pages" aria-expanded="false" aria-controls="liability-pages">
-                <img src="images/icons/9.png" alt="">
+                <i class="fa fa-briefcase icon-liability" aria-hidden="true"></i>
                 <span class="menu-title">Liability<i class="fa fa-sort-down"></i></span>
               </a>
               <div class="collapse" id="liability-pages">
@@ -81,11 +81,22 @@
         <?php } ?>
              <li class="nav-item">
               <a class="nav-link" href="loanverify.php">
-                <img src="images/icons/15.png" alt="">
+                <i class="fa fa-check-circle icon-verification" aria-hidden="true"></i>
                 <span class="menu-title">Loan Verification</span>
               </a>
             </li>
-           
+            <li class="nav-item">
+              <a class="nav-link" href="manage_users.php">
+                <i class="fa fa-users icon-users" aria-hidden="true"></i>
+                <span class="menu-title">User Accounts</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="security_center.php">
+                <i class="fa fa-shield icon-security" aria-hidden="true"></i>
+                <span class="menu-title">Security Center</span>
+              </a>
+            </li>
           </ul>
         </nav>
 
