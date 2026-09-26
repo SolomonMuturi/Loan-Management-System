@@ -190,7 +190,7 @@ class ManageLoan
 		return $result;
 	}
 
-public function getTotalLoanAmount() {
+    public function getTotalLoanAmount() {
     $query = "SELECT SUM(expected_loan) AS expected_loan_amount FROM tbl_loan_application"; // Adjust table name accordingly
 
     // Execute the query
@@ -201,6 +201,39 @@ public function getTotalLoanAmount() {
         return (float) $row['expected_loan_amount'] ?? 0; // Return the value as a float, defaulting to 0
     }
     return 0; // Return 0 if there’s no result
+}
+
+// Principal actually lent out: only applications that reached status 3
+// (approved and disbursed). getTotalLoanAmount() sums every row, so it is the
+// portfolio size, not the disbursed figure.
+public function getDisbursedLoanAmount() {
+    $query = "SELECT COALESCE(SUM(expected_loan), 0) AS disbursed_amount
+              FROM tbl_loan_application WHERE status = 3";
+    $result = $this->db->select($query);
+
+    if ($result) {
+        $row = $result->fetch_assoc();
+        return (float) ($row['disbursed_amount'] ?? 0);
+    }
+    return 0.0;
+}
+
+// Capital the bank still holds: everything applied for, less what it has
+// disbursed. Withdrawn against applications that are still awaiting
+// verification, so it needs no hard-coded starting figure and cannot go
+// negative on its own.
+public function getUndisbursedCapital() {
+    $query = "SELECT COALESCE(SUM(expected_loan), 0)
+                     - COALESCE(SUM(CASE WHEN status = 3 THEN expected_loan ELSE 0 END), 0)
+                     AS undisbursed
+              FROM tbl_loan_application";
+    $result = $this->db->select($query);
+
+    if ($result) {
+        $row = $result->fetch_assoc();
+        return (float) ($row['undisbursed'] ?? 0);
+    }
+    return 0.0;
 }
 	//get loan not paid
 	public function getApprovedLoanNotPaid($b_id)
