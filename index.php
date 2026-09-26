@@ -117,7 +117,7 @@
           <p class="card-text text-dark">Total Disbursed Amount</p>
           <h4 class="bold-text">
             <?php 
-              $totalDisbursed = $ml->getTotalLoanAmount(); // Call the method to get the total loan amount
+              $totalDisbursed = $ml->getDisbursedLoanAmount(); // approved and disbursed only
               echo number_format($totalDisbursed); // Format the number for better readability
             ?> Ksh
           </h4>
@@ -137,15 +137,18 @@
                     </h4>
                 </div>
                 <div class="float-right">
-                    <p class="card-text text-dark">Remaining Capital</p>
+                    <p class="card-text text-dark">Undisbursed Capital</p>
                     <h4 class="bold-text">
                         <?php 
-                            $initialCapital = 1000000; // Set the initial capital amount
-                            $totalDisbursed = $ml->getTotalLoanAmount(); // Get the total disbursed amount
-                            $totalCapital = $initialCapital - $totalDisbursed; // Calculate total capital
-                            echo number_format($totalCapital); // Format the number for readability
+                            // Everything applied for, less what has actually been disbursed.
+                            // This is the money still sitting in the bank.
+                            $undisbursed = $ml->getUndisbursedCapital();
+                            echo number_format($undisbursed); // Format the number for readability
                         ?> Ksh
                     </h4>
+                    <p class="text-muted mb-0">
+                        <i class="fa fa-university mr-1" aria-hidden="true"></i> Still in the bank
+                    </p>
                 </div>
             </div>
         </div>
